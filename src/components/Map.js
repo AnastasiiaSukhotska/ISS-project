@@ -13,15 +13,17 @@ const defaulOptions = {
   disableDoubleClickZoom: true,
   fullScreenControll: false,
 }
+
 export const Map = ({ center }) => {
   const mapRef = useRef(undefined);
   const onLoad = useCallback(function (map) {
     mapRef.current = map;
-  }, [])
+  }, []);
 
   const onUnmount = useCallback(function callback(map) {
     mapRef.current = undefined;
-  }, [])
+  }, []);
+
   return (
     <div className='map-container'>
       <GoogleMap

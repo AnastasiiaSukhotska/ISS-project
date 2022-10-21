@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 export const CurrentTimeComponent = () => {
     let dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     dateOptions.timeZone = 'UTC';
@@ -10,14 +11,15 @@ export const CurrentTimeComponent = () => {
         let timeNow = date.toLocaleTimeString('en-GB', opt2)
         return { timeNow, dateNow }
     }
+
     const [currentTime, setCurrentTime] = useState(getCurrentDate(dateOptions, timeOptions));
 
     useEffect(() => {
         setInterval(() => {
             setCurrentTime(getCurrentDate(dateOptions, timeOptions))
-        }, 1000)
+        }, 1000);
 
-    }, [])
+    }, []);
 
     return (
         <div className='current-time'>

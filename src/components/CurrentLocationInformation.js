@@ -1,4 +1,5 @@
 export const CurrentLocationInformation = ({ center }) => {
+    
     return (
         <div className='current-location-container'>
             <h2>ISS is now located at:</h2>
